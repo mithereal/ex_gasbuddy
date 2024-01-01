@@ -7,6 +7,8 @@ defmodule ExGasbuddy do
 
   @doc """
     Fetch the data for the station id
+
+    iex> {_status, data, _headers} = ExGasbuddy.fetch("177845")
   """
   def fetch(id \\ "177845") do
     GQL.query(
@@ -19,6 +21,8 @@ defmodule ExGasbuddy do
 
   @doc """
     Fetch the station(s) data near the query (zip code)
+
+    iex> {_status, data, _headers} = ExGasbuddy.search("85711")
   """
   def search(string \\ "85711") do
     GQL.query(
